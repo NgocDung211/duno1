@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+    <div class = "container-quote">
+
+        <form action = "/login" method = "post">
+            <input type="text" class="form-control mx-auto w-auto mt-20" placeholder = "Username" autocomplete= "off" autofocus name="username"><br />
+            <input type="password" class="form-control mx-auto w-auto mt-20" placeholder = "Password" autocomplete= "off" name="password">
+            <a class="link_forget_password" href="/forget" >Forget your password?</a><br /><br />
+            <button type="submit" class=" submit1 btn btn-outline-primary">Login</button><br /><br /><br />
+        </form>
+    </div>
+
+{% endblock %}

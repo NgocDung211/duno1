@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+        <div class="container-quote">
+        <form action = "/register" method = "post">
+            <input type="text" class="form-control mx-auto  w-auto mt-22" placeholder = "Username" autocomplete= "off" autofocus name="username">
+            <input type="password" class="form-control mx-auto  w-auto mt-22" placeholder = "Password" autocomplete= "off"  name="password">
+            <input type="password" class="form-control mx-auto  w-auto mt-22" placeholder = "Confirmation" autocomplete= "off"  name="confirmation">
+            <input type="email" class="form-control mx-auto  w-auto mt-22" placeholder = "Email" autocomplete= "off"  name="email">
+
+            <button type="submit" class=" btn btn-outline-primary mt-1">Register</button>
+        </form>
+    </div>
+
+{% endblock %}

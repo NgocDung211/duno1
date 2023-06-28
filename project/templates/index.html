@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+HomePage
+{% endblock %}
+
+{% block main %}
+
+<div class = "container-quote">
+    <div class = "text-focus-in" style = "color:#967E76">
+        <i class="material-icons" style="color: #FF8551;">&#xeb3b;</i>
+        <i class="material-icons" style="color: #FF8551;">&#xeb3b;</i>
+        <h5>{{random_quote}}</h5>
+    </div>
+
+    <div class="bottom-elements">
+        <form action="/" method="post">
+            <input class="quote form-control mx-auto" autocomplete="off" autofocus type="text" placeholder="Quote" name="quote">
+            <button type="submit" class="button btn btn-outline-primary">Add</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Account
+{% endblock %}
+
+{% block main %}
+<div class ="container-quote">
+    <form action="/account" method = "post">
+        <input type="password" class="form-control mx-auto w-auto mt-20" placeholder = "Your Password" autocomplete= "off" name="old_password">
+        <input type="password" class="form-control mx-auto w-auto mt-20" placeholder = " New Password" autocomplete= "off" name="new_password">
+        <input type="password" class="form-control mx-auto w-auto mt-20" placeholder = "Confirmation" autocomplete= "off" name="confirmation">
+        <button type="submit" class=" btn btn-outline-primary">Change Password</button>
+
+    </form>
+</div>
+
+{% endblock %}

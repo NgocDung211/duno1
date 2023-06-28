@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}
+Your Quotes
+{% endblock %}
+
+{% block main %}
+
+    <div class = "container-quote">
+        {% for line in quotes %}
+            <div class="quote-box">
+                <p class="quote-text">{{line.quote}}</p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item">
+                        <form action="/edit" method ="get">
+                        <input type="hidden" name= "quote" value="{{line.quote}}">
+                        <button type="submit" class="btn btn-outline_success">Edit</button>
+                        </form>
+                    </li>
+                      <li  class="dropdown-item">
+                        <form action="/delete" method ="post">
+                        <input type="hidden" name= "quote" value="{{line.quote}}">
+                        <button type="submit" class="btn btn-outline_success">Delete</button>
+                        </form>
+                    </li>
+                    </ul>
+                  </div>
+            </div>
+            {% endfor %}
+            <!-- Repeat for each quote -->
+            <!-- ... -->
+
+            <!--
+              <form action="/send_email" method="post">
+                <button type="submit" class="button btn btn-outline-primary" >Send</button>
+            </form>
+            -->
+
+    </div>
+    <script>
+        function showMenu(elem) {
+    var dropdownContent = elem.nextElementSibling;
+    dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
+}
+    </script>
+
+{% endblock %}

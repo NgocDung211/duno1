@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+General Settinngs
+{% endblock %}
+
+{% block main %}
+
+    <div class="container-quote">
+        <form action="/general_settings" method="post">
+            <p>
+                <strong>Timezone: </strong>
+                <select name="timezone" class="form-control mx-auto w-auto mt-20">
+                    <option value="{{user_timezone}}" selected>{{user_timezone}}</option>
+                    {% for timezone in timezones %}
+                        <option value="{{timezone}}">
+                            {{timezone}}
+                        </option>
+                    {% endfor %}
+                </select>
+            </p>
+            <p>
+                <strong>Notification Time: </strong>
+                <input class="form-control mx-auto w-auto mt-20"  type="time" id="notifTime" name="time_notification" value="{{time_notification}}">
+            </p>
+            <p>
+                <strong>Notification enable:</strong>
+            </p>
+            <p>
+                <!-- Rounded switch -->
+                <label class="switch">
+                    <input type="checkbox" name = "Checkbox" {% if notification_enabled == 1 %} checked{% endif %}>
+                    <span class="slider round"></span>
+                </label>
+            </p>
+
+            <button type="submit" class="button btn btn-outline-primary">Save</button>
+        </form>
+    </div>
+
+{% endblock %}
